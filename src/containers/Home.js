@@ -37,7 +37,9 @@ function Home() {
 
   const selectPokemonHandler = async (pokemon) => {
     setOverview(pokemon);
-    setToggle(true);     
+    setTimeout(() => {
+      setToggle(true); 
+    }, 200);        
   }
 
   const openForm = () => {
