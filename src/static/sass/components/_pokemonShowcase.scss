@@ -68,66 +68,7 @@ div.swiper-button-next {
       @include responsive(phone) {
          width: 98vw;
       }
-
-      &--movie:hover~&--movie {
-         transform: translate3d(5rem, 0, 0);
-
-         @include responsive(tab_port) {
-            transform: translate3d(3rem, 0, 0);
-         }
-
-         @include responsive(phone) {
-            transform: translate3d(2.8rem, 0, 0);
-         }
-      }
-
-      &--movie__netflix:hover~&--movie__netflix {
-         transform: translate3d(1rem, 0, 0);
-      }
-
-      &:hover &--movie__netflix {
-         &:hover {
-            transform: scale(1.1) !important;
-
-            @include responsive(tab_port) {
-               transform: scale(1.05) !important;
-            }
-
-            @include responsive(phone) {
-               transform: scale(1.05) !important;
-            }
-         }
-      }
-
-      &--movie {
-         cursor: pointer;
-         transition: all 450ms;
-         transform: center left;
-         padding-top: 3.5rem;
-         padding-bottom: 4rem;
-         min-height: 0;
-         object-fit: contain;
-
-         &:not(:last-child) {
-            padding-right: .5rem;
-         }
-
-         &-image {
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
-         }
-
-         &__netflix {
-            min-height: 0;
-            padding-top: 3rem;
-            padding-bottom: 4rem;
-            padding-right: 1rem;
-            cursor: pointer;
-            transition: all 450ms;
-            transform: center left;
-         }
-      }
+         
    }
 
    &__container-card {
