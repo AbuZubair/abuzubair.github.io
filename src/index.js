@@ -14,11 +14,6 @@ import {
 } from "@apollo/client";
 
 import App from './containers/App';
-import 'swiper/swiper-bundle.min.css';
-// import 'swiper/components/navigation/navigation.scss';
-// import 'swiper/components/pagination/pagination.scss';
-// import 'swiper/components/scrollbar/scrollbar.scss';
-// Import main sass file to apply global styles
 import './static/sass/style.scss';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -32,10 +27,8 @@ const client = new ApolloClient({
 
 const app = (
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <ApolloProvider client={client}>
-      {/* <FirestoreProvider {...credentials} firebase={firebase}> */}
-        <App />
-      {/* </FirestoreProvider> */}
+    <ApolloProvider client={client}>      
+        <App />     
     </ApolloProvider>
   </Provider>
 );
