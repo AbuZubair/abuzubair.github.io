@@ -1,0 +1,218 @@
+// Override swiper styles
+.swiper-pagination {
+   top: 0 !important;
+   height: 2rem !important;
+   text-align: right !important;
+   padding-right: 4rem !important;
+}
+
+.swiper-pagination-bullet {
+   background-color: rgb(255, 255, 255) !important;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets {
+   bottom: 0 !important;
+   left: 0 !important;
+   width: 100% !important;
+}
+
+div.swiper-button-prev,
+div.swiper-button-next {
+   transition: all 450ms !important;
+   color: rgb(255, 255, 255);
+
+   &:hover {
+      transform: scale(1.2) !important;
+      transition: all 450ms !important;
+   }
+}
+
+.swiper-slide {
+   transition: all 450ms !important;
+}
+
+.swiper-wrapper:hover .swiper-slide {
+   opacity: .3 !important;
+
+   &:hover {
+      transform: scale(1.3) !important;
+      opacity: 1 !important;
+
+      @include responsive(tab_port) {
+         transform: scale(1.2) !important;
+      }
+   }
+}
+
+.pokemonShowcase {
+   background-color: $color-background;
+   grid-column: 2 / 12;
+   // color: #fff;   
+   // position: relative;
+
+   @include responsive(phone) {
+      grid-column: 1 / 13;
+   }
+   
+   &__heading {
+      padding-top: 2rem;
+      padding-left: 1.5em;
+      font-size: 4rem;
+   }
+
+   &__container::-webkit-scrollbar {
+      display: none;
+   }
+
+   &__container {
+      @include responsive(phone) {
+         width: 98vw;
+      }
+
+      &--movie:hover~&--movie {
+         transform: translate3d(5rem, 0, 0);
+
+         @include responsive(tab_port) {
+            transform: translate3d(3rem, 0, 0);
+         }
+
+         @include responsive(phone) {
+            transform: translate3d(2.8rem, 0, 0);
+         }
+      }
+
+      &--movie__netflix:hover~&--movie__netflix {
+         transform: translate3d(1rem, 0, 0);
+      }
+
+      &:hover &--movie__netflix {
+         &:hover {
+            transform: scale(1.1) !important;
+
+            @include responsive(tab_port) {
+               transform: scale(1.05) !important;
+            }
+
+            @include responsive(phone) {
+               transform: scale(1.05) !important;
+            }
+         }
+      }
+
+      &--movie {
+         cursor: pointer;
+         transition: all 450ms;
+         transform: center left;
+         padding-top: 3.5rem;
+         padding-bottom: 4rem;
+         min-height: 0;
+         object-fit: contain;
+
+         &:not(:last-child) {
+            padding-right: .5rem;
+         }
+
+         &-image {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+         }
+
+         &__netflix {
+            min-height: 0;
+            padding-top: 3rem;
+            padding-bottom: 4rem;
+            padding-right: 1rem;
+            cursor: pointer;
+            transition: all 450ms;
+            transform: center left;
+         }
+      }
+   }
+
+   &__container-card {
+      display: flex;
+
+      &--cards{
+         margin: 2em;
+
+         .MuiTypography-root{
+            font-family: var(--bs-font-sans-serif) !important;
+         }
+
+         .MuiTypography-body2{
+            font-size: 1.4rem;
+            text-transform: capitalize;
+         }
+
+         .MuiCardHeader-title{
+            text-transform: capitalize;
+            font-weight: bold;
+            font-size: 1.8rem;
+         }
+
+         .MuiCardMedia-root{
+            background-size: contain;
+         }
+
+         &---chip{
+            padding-left: 1rem;
+            padding-bottom: 1rem;
+         }
+      }
+
+      &--nomargin{
+         margin-left: unset !important;
+         margin-right: unset !important;
+
+         &---loadingContainer{
+            min-height: 600px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #fff;
+            z-index: 9;
+
+            &----bar{
+               position: absolute;
+               top:50%;
+               left:50%;
+               @include responsive(tab_port) {
+                  left:45% !important;
+               }
+            }
+            
+         }
+
+         .MuiChip-root{
+            margin-right:5px;
+         }
+
+         .MuiChip-label{
+            text-transform: capitalize;
+            font-size: 1rem;
+         }
+      }   
+         
+   }
+
+   &__container-moreButton{
+      text-align: center;
+
+      button{
+         border: 1px solid #b3ff00 !important;
+         color: #b3ff00 !important;
+         font-weight: bold;
+      }
+   }
+}
+
+.text-center{
+   text-align: center;   
+   grid-column: 2 / 12;
+   min-height: 70px;
+}
+
+.textRight{
+   text-align: right;
+}
